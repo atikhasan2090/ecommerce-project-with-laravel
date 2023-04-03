@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('billing_addresses', function (Blueprint $table) {
             $table->id();
             $table->string('user_id')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('company_name')->nullable();
             $table->string('country')->nullable();
             $table->string('street_address')->nullable();
             $table->string('city')->nullable();
@@ -24,15 +23,6 @@ return new class extends Migration
             $table->string('postcode')->nullable();
             $table->string('phone_no')->nullable();
             $table->string('email')->nullable();
-            $table->string('note')->nullable();
-
-            $table->string('product_no')->nullable();
-            $table->string('product_title')->nullable();
-            $table->string('product_image')->nullable();
-            $table->string('product_quantity')->nullable();
-            $table->string('product_price')->nullable();
-
-            $table->string('order_status')->nullable();
             $table->timestamps();
         });
     }
@@ -42,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('billing_addresses');
     }
 };
